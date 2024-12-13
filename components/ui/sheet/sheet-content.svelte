@@ -20,10 +20,10 @@
 	export { className as class };
 	export let inTransition: $$Props["inTransition"] = fly;
 	export let inTransitionConfig: $$Props["inTransitionConfig"] =
-		sheetTransitions[side ?? "right"].in;
+		sheetTransitions["right"].in;
 	export let outTransition: $$Props["outTransition"] = fly;
 	export let outTransitionConfig: $$Props["outTransitionConfig"] =
-		sheetTransitions[side ?? "right"].out;
+		sheetTransitions["right"].out;
 </script>
 
 <SheetPortal>
