@@ -7,8 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator"
 import { Skeleton } from "@/components/ui/skeleton"; 
 import { Accordion } from "@/components/ui/accordion";
-import { Organization } from "@clerk/nextjs/server";
-import { NavItem } from "./nav-item";
+import { NavItem, Organization } from "./nav-item";
 interface SidebarProps {
     storageKey?: string;
 };
@@ -76,11 +75,12 @@ export const Sidebar = ({
                 <span className="pl-4">
                     Workspaces
                 </span>
-                <Button asChild
-                type="button"
-                size="icon"
-                variant="ghost"
-                className="ml-auto"
+                <Button 
+                    asChild
+                    type="button"
+                    size="icon"
+                    variant="ghost"
+                    className="ml-auto"
                 >
                     
                     <Link href="/select-org">
@@ -102,11 +102,8 @@ export const Sidebar = ({
                     isExpanded={expanded[organization.id]}
                     organization={organization as Organization}
                     onExpand={onExpand}
-                        
-
                     />
                 ))}
-
             </Accordion>
         </>
     );

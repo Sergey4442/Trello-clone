@@ -1,8 +1,8 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import {
     Activity,
@@ -20,15 +20,15 @@ export type Organization ={
     slug: string;
     imageUrl: string;
     name: string;
-}
+};
 
 
 interface NavItemProps {
     isExpanded: boolean;
     isActive: boolean;
-    organization: Organization;
+    organization: any;
     onExpand: (id: string) => void;
-}
+};
 
 export const NavItem = ({
     isExpanded,
@@ -65,7 +65,6 @@ export const NavItem = ({
 
     const onClick = (href: string) => {
         router.push(href);
-
     };
 
 
