@@ -16,7 +16,7 @@ export type State = {
 const CreateBoard = z.object({
     title: z.string().min(3, {
         message: "Minimum length of 3 letters is required"
-    }),
+    })
 });
 
 export async function create(prevState: State, formData: FormData) {
@@ -27,11 +27,11 @@ export async function create(prevState: State, formData: FormData) {
     if (!validatedFields.success) {
         return {
             errors: validatedFields.error.flatten().fieldErrors,
-            message: "Missing fields"
+            message: "Missing fields."
         }
     }
 
-    const {title} = validatedFields.data;
+    const { title } = validatedFields.data;
 
     try {
         await db.board.create({
@@ -47,4 +47,4 @@ export async function create(prevState: State, formData: FormData) {
 
     revalidatePath("/organization/org_2pyQZw2xW8XvX6YwLBuzrg4RxRW?title=132424");
     redirect("/organization/org_2pyQZw2xW8XvX6YwLBuzrg4RxRW?title=132424");
-};
+}
