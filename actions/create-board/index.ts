@@ -24,7 +24,7 @@ const userId: any  = auth();
     let board;
 
     try {
-        throw new Error("Ошибка")
+        throw new Error("a");
         board = await db.board.create({
             data: {
                 title,
