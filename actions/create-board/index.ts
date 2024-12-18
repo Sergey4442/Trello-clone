@@ -24,6 +24,7 @@ const userId: any  = auth();
     let board;
 
     try {
+        throw new Error("Ошибка")
         board = await db.board.create({
             data: {
                 title,
@@ -39,4 +40,4 @@ const userId: any  = auth();
     return {data: board};
 };
 
-export const CreateBoard1 = createSafeAction(CreateBoard, handler)
+export const createBoard = createSafeAction(CreateBoard, handler)
